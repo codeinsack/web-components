@@ -4,6 +4,14 @@ class Tooltip extends HTMLElement {
     this._tooltipContainer = null
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.innerHTML = `
+      <style>
+        div {
+          background-color: black;
+          color: white;
+          position: absolute;
+          z-index: 10;
+        }
+      </style>
       <slot></slot>
       <span> (?)</span>
     `
