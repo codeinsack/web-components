@@ -39,7 +39,7 @@ class Modal extends HTMLElement {
         header {
           padding: 1rem;
         }
-        header h1 {
+        ::slotted(h1) {
           font-size: 1.25rem;
         }
         #main {
@@ -69,6 +69,10 @@ class Modal extends HTMLElement {
         </section>
       </div>
     `
+    const slots = this.shadowRoot.querySelectorAll('slot')
+    slots[1].addEventListener('slotchange', event => {
+      console.dir(slots[1].assignedNodes())
+    })
   }
 
   open() {
