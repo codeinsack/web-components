@@ -5,6 +5,7 @@
   <title>Web Components</title>
   <script src="tooltip.js"></script>
   <script src="confirm-link.js"></script>
+  <script src="modal.js"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -12,6 +13,9 @@
     html {
       --color-primary: lightblue;
       font-family: sans-serif;
+    }
+    body {
+      margin: 2rem;
     }
   </style>
 </head>
@@ -25,5 +29,9 @@
     <a is="confirm-link" href="https://www.google.com">Google</a>
   </p>
   <my-tooltip></my-tooltip>
+  <br>
+  <p>Please confirm your choice.</p>
+  <button>Show Details & Confirm</button>
+  <my-modal></my-modal>
 </body>
 </html>
