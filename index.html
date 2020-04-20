@@ -35,5 +35,12 @@
   <my-modal>
     <p>With your confirmation you agree to pay the full amount!</p>
   </my-modal>
+  <script>
+    const confirmButton = document.querySelector('button')
+    const modal = document.querySelector('my-modal')
+    confirmButton.addEventListener('click', () => {
+      modal.setAttribute('opened', '')
+    })
+  </script>
 </body>
 </html>
