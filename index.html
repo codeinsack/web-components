@@ -40,10 +40,10 @@
     const confirmButton = document.querySelector('button')
     const modal = document.querySelector('my-modal')
     modal.addEventListener('confirm', () => {
-      console.dir('confirmed...')
+      console.log('confirmed...')
     })
     modal.addEventListener('cancel', () => {
-      console.dir('cancelled...')
+      console.log('cancelled...')
     })
     confirmButton.addEventListener('click', () => {
       if (!modal.isOpen) {

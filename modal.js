@@ -23,7 +23,7 @@ class Modal extends HTMLElement {
         }
         #modal {
           position: fixed;
-          top: 15vh;
+          top: 10vh;
           left: 25%;
           width: 50%;
           z-index: 100;
@@ -35,12 +35,18 @@ class Modal extends HTMLElement {
           justify-content: space-between;
           opacity: 0;
           pointer-events: none;
+          transition: all 0.3s ease-out;
+        }
+        :host([opened]) #modal {
+          top: 15vh;
         }
         header {
           padding: 1rem;
+          border-bottom: 1px solid #ccc;
         }
         ::slotted(h1) {
           font-size: 1.25rem;
+          margin: 0;
         }
         #main {
           padding: 1rem;
@@ -73,10 +79,12 @@ class Modal extends HTMLElement {
     slots[1].addEventListener('slotchange', event => {
       console.dir(slots[1].assignedNodes())
     })
+    const backdrop = this.shadowRoot.querySelector('#backdrop')
     const cancelButton = this.shadowRoot.querySelector('#cancel-btn')
     const confirmButton = this.shadowRoot.querySelector('#confirm-btn')
     cancelButton.addEventListener('click', this._cancel.bind(this))
     confirmButton.addEventListener('click', this._confirm.bind(this))
+    backdrop.addEventListener('click', this._cancel.bind(this))
   }
 
   open() {
