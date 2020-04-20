@@ -20,8 +20,11 @@ class Tooltip extends HTMLElement {
           border-radius: 50%;
           padding: 0.15rem 0.5rem;
         }
-        :host {
+        :host {background-color: yellowgreen;
           border: 3px solid blueviolet;
+        }
+        :host(.important) {
+          color: white;
         }
       </style>
       <slot></slot>
