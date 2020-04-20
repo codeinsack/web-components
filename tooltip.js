@@ -24,7 +24,7 @@ class Tooltip extends HTMLElement {
           border: 3px solid blueviolet;
         }
         :host(.important) {
-          color: white;
+          color: var(--color-primary, red);
         }
         :host-context(p) {
           font-weight: bold;
