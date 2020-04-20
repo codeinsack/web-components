@@ -91,12 +91,19 @@ class Modal extends HTMLElement {
     this.isOpen = false
   }
 
-  _cancel() {
+  _cancel(event) {
     this.hide()
+    const cancelEvent = new Event('cancel', {
+      bubbles: true, // handle outside if component
+      composed: true, // leave shadow dom if true
+    })
+    event.target.dispatchEvent(cancelEvent)
   }
 
   _confirm() {
     this.hide()
+    const confirmEvent = new Event('confirm')
+    this.dispatchEvent(confirmEvent)
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
