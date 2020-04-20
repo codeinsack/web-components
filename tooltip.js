@@ -26,8 +26,11 @@ class Tooltip extends HTMLElement {
         :host(.important) {
           color: white;
         }
+        :host-context(p) {
+          font-weight: bold;
+        }
       </style>
-      <slot></slot>
+      <slot>Default value</slot>
       <span class="icon">?</span>
     `
   }
